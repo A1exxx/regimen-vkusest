@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64">
+  <rect width="64" height="64" fill="#D8262A"/>
+  <!-- letterform drawn as a path so it never depends on a font being present -->
+  <path fill="#FFFFFF" d="M14 12h22.2c8.9 0 14.6 5 14.6 12.8 0 5.7-3 9.9-8.2 11.7L52 52H40.4l-8.3-13.6h-6.6V52H14V12zm11.5 9.2v9.4h9.1c3.4 0 5.4-1.8 5.4-4.7s-2-4.7-5.4-4.7h-9.1z"/>
+</svg>

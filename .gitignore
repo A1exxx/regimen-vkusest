@@ -1,0 +1,6 @@
+Thumbs.db
+.DS_Store
+desktop.ini
+
+# local render scratch from the build session
+tools/_*

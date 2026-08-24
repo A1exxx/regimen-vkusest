@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<!-- Source for assets/og.png. Regenerate with tools/build-og.ps1 -->
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700&family=Barlow:wght@400;600&display=swap" rel="stylesheet">
+<style>
+  *{margin:0;padding:0;box-sizing:border-box}
+  html,body{width:1200px;height:630px;overflow:hidden}
+  body{
+    background:#F7F4EF; color:#16110F;
+    font-family:"Barlow",sans-serif;
+    position:relative;
+  }
+  .hatch{
+    position:absolute; inset:0;
+    background:repeating-linear-gradient(-68deg,transparent 0 54px,rgba(216,38,42,.07) 54px 56px);
+  }
+  .grain{
+    position:absolute; inset:0; opacity:.3; mix-blend-mode:multiply;
+    background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3'/%3E%3C/filter%3E%3Crect width='140' height='140' filter='url(%23n)' opacity='.42'/%3E%3C/svg%3E");
+  }
+  .wrap{position:relative;height:100%;display:grid;grid-template-columns:1fr 400px}
+  .left{padding:66px 0 66px 76px;display:flex;flex-direction:column}
+  .kick{
+    font-family:"Barlow Condensed",sans-serif;font-weight:600;font-size:22px;
+    letter-spacing:.22em;text-transform:uppercase;color:#5A524D;
+    padding-bottom:18px;border-bottom:1px solid #DCD5C9;
+  }
+  .ttl{
+    font-family:"Barlow Condensed",sans-serif;font-weight:700;font-size:214px;
+    line-height:.8;letter-spacing:-.03em;color:#D8262A;margin-top:34px;
+  }
+  .sub{
+    font-family:"Barlow Condensed",sans-serif;font-weight:600;font-size:52px;
+    line-height:1;text-transform:uppercase;margin-top:26px;
+    padding-top:24px;border-top:5px solid #16110F;max-width:14ch;
+  }
+  .facts{display:flex;gap:52px;margin-top:auto}
+  .facts div{display:flex;align-items:baseline;gap:10px}
+  .facts b{font-family:"Barlow Condensed",sans-serif;font-weight:700;font-size:46px;line-height:1}
+  .facts span{
+    font-family:"Barlow Condensed",sans-serif;font-weight:600;font-size:17px;
+    letter-spacing:.16em;text-transform:uppercase;color:#5A524D;
+  }
+  .right{display:flex;align-items:center;justify-content:center;padding-right:60px}
+  .card{
+    background:#D8262A;color:#fff;padding:40px 36px;box-shadow:18px 18px 0 #16110F;
+    transform:rotate(-2deg);width:320px;
+  }
+  .mon{
+    font-family:"Barlow Condensed",sans-serif;font-weight:600;font-size:21px;
+    letter-spacing:.24em;text-transform:uppercase;opacity:.88;
+  }
+  .num{
+    font-family:"Barlow Condensed",sans-serif;font-weight:700;font-size:124px;
+    line-height:.85;letter-spacing:-.02em;margin:14px 0 10px;display:flex;align-items:center;gap:4px;
+  }
+  .num em{font-style:normal;opacity:.6;font-size:.6em}
+  .dow{
+    font-family:"Barlow Condensed",sans-serif;font-weight:600;font-size:21px;
+    letter-spacing:.16em;text-transform:uppercase;
+    padding-top:18px;border-top:2px solid rgba(255,255,255,.4);
+  }
+  .strip{
+    position:absolute;left:0;right:0;bottom:0;height:52px;background:#16110F;color:#F7F4EF;
+    display:flex;align-items:center;padding-left:76px;
+    font-family:"Barlow Condensed",sans-serif;font-weight:600;font-size:21px;
+    letter-spacing:.15em;text-transform:uppercase;
+  }
+  .strip i{color:#D8262A;font-style:normal;padding:0 16px}
+</style>
+</head>
+<body>
+  <div class="hatch"></div>
+  <div class="wrap">
+    <div class="left">
+      <p class="kick">Vkus Est cafe &middot; Chalong, Phuket</p>
+      <p class="ttl">REGIMEN</p>
+      <p class="sub">Five days of proper load</p>
+      <div class="facts">
+        <div><b>5</b><span>days</span></div>
+        <div><b>10</b><span>sessions</span></div>
+        <div><b>24</b><span>places</span></div>
+      </div>
+    </div>
+    <div class="right">
+      <div class="card">
+        <p class="mon">September 2026</p>
+        <p class="num"><span>22</span><em>&mdash;</em><span>26</span></p>
+        <p class="dow">Tuesday to Saturday</p>
+      </div>
+    </div>
+  </div>
+  <div class="strip">Training <i>&middot;</i> Eating <i>&middot;</i> Recovering <i>&middot;</i> No fanaticism</div>
+  <div class="grain"></div>
+</body>
+</html>
