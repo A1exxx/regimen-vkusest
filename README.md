@@ -121,6 +121,75 @@ Edit `tools/og-source.html`, then:
 powershell -ExecutionPolicy Bypass -File tools\build-og.ps1
 ```
 
+## Hosting
+
+The site runs in two places on purpose.
+
+**GitHub Pages** — https://a1exxx.github.io/regimen-vkusest/ — free, on a CDN, nothing to
+maintain. This is the fallback and it costs nothing to leave running.
+
+**The Contabo VPS** — 84.247.148.135, Singapore — serves the same files from
+`/var/www/regimen` behind nginx. Worth knowing: **that server is paid only until roughly
+15 November 2026.** If the renewal is missed the VPS copy disappears; the Pages copy does not.
+
+### Deploying to the VPS
+
+```bash
+bash tools/deploy-vps.sh
+```
+
+Packs `index.html` + `assets`, swaps `/var/www/regimen`, then checks the result over HTTP
+before reporting success. nginx needs no reload for static files.
+
+### What is configured on the server
+
+| Host | Serves |
+|---|---|
+| `regimen.cc`, `www.regimen.cc` | the site, from `/var/www/regimen` |
+| `panel.regimen.cc` | reverse proxy to `127.0.0.1:8090` (Marketing Autopilot) |
+| `wa.regimen.cc` | reverse proxy to `127.0.0.1:3001` (WAHA) |
+| the bare IP, any unknown host | `444`, connection closed |
+
+Configs live in `/etc/nginx/sites-available/{regimen.cc,vps-services,000-catchall}`.
+gzip is on for text, assets get a 30-day cache, HTML gets `no-cache`.
+
+The two proxied services were previously reachable only as `http://IP:8090` and
+`http://IP:3001` with Basic auth over **plain HTTP**, meaning credentials travelled in
+cleartext. Putting them behind nginx and issuing certificates fixes that.
+
+> **Do not firewall ports 3001 and 8090 yet.** WAHA is configured with
+> `WAHA_BASE_URL=http://84.247.148.135:3001` and refers to itself by that address. Change the
+> variable to `https://wa.regimen.cc` and restart the container first, then close the ports.
+
+### Certificates
+
+`certbot` and its auto-renew timer are installed and enabled. Once DNS resolves, issue with:
+
+```bash
+certbot --nginx -d regimen.cc -d www.regimen.cc -d panel.regimen.cc -d wa.regimen.cc         --agree-tos -m alexandr.egorov1199@gmail.com --redirect
+```
+
+Renewal is automatic from then on.
+
+### DNS records to create at the registrar
+
+| Type | Name | Value |
+|---|---|---|
+| A | `@` | `84.247.148.135` |
+| A | `www` | `84.247.148.135` |
+| A | `panel` | `84.247.148.135` |
+| A | `wa` | `84.247.148.135` |
+| AAAA | `@` | `2407:3640:2330:1489::1` |
+
+To point the apex at GitHub Pages instead of the VPS, use these four A records rather than the
+server's, and run `tools/switch-domain.ps1` (it refuses to run until it can see them):
+
+```
+185.199.108.153   185.199.109.153   185.199.110.153   185.199.111.153
+```
+
+---
+
 ### Moving to a custom domain
 
 Three tags in `index.html` hard-code the public origin, because Telegram, WhatsApp and Facebook
