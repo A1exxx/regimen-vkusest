@@ -4,64 +4,58 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>REGIMEN · Five Days of Proper Load · 22–26 September · Vkus Est, Phuket</title>
-<meta name="description" content="REGIMEN is a five-day practical week about training, eating and recovering properly. 22–26 September 2026 at Vkus Est café, Chalong, Phuket. Morning sessions, evening breakdowns, a menu built around the programme.">
+<meta name="description" content="REGIMEN is a free five-day week on training and eating properly. Five movements, five mornings, five dinners. 22–26 September 2026 at Vkus Est cafe, Chalong, Phuket. Register on WhatsApp.">
 <meta name="theme-color" content="#D8262A">
 <meta name="color-scheme" content="light">
 
+<!-- og:image and og:url MUST be absolute: Telegram, WhatsApp and Facebook
+     ignore relative paths and the share preview silently comes up blank.
+     These three tags are the only place the public origin is hard-coded.
+     Change them when the site moves to its own domain. -->
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Vkus Est · Chalong, Phuket">
 <meta property="og:title" content="REGIMEN · Five Days of Proper Load">
-<meta property="og:description" content="22–26 September 2026. Five mornings of practice, five evenings of breakdown, one menu built around the programme. Vkus Est café, Chalong, Phuket.">
+<meta property="og:description" content="Free. 22–26 September 2026. Five movements, five mornings, five dinners at Vkus Est cafe, Chalong, Phuket.">
 <meta property="og:locale" content="en_US">
-<meta property="og:locale:alternate" content="ru_RU">
-<!-- og:image and og:url MUST be absolute: Telegram, WhatsApp and Facebook
-     ignore relative paths and the share preview silently comes up blank.
-     These three lines are the only place the public origin is hard-coded.
-     Change them when the site moves to its own domain. -->
 <meta property="og:url" content="https://a1exxx.github.io/regimen-vkusest/">
 <meta property="og:image" content="https://a1exxx.github.io/regimen-vkusest/assets/og.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
 
+<link rel="canonical" href="https://a1exxx.github.io/regimen-vkusest/">
 <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
 <link rel="apple-touch-icon" href="assets/favicon.svg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700&family=Barlow:wght@400;500;600;700&display=swap" rel="stylesheet">
-<link rel="canonical" href="https://a1exxx.github.io/regimen-vkusest/">
+<link rel="preload" as="image" href="assets/img/hero.webp" fetchpriority="high">
 <link rel="stylesheet" href="assets/styles.css">
 </head>
 <body>
 
 <div class="grain" aria-hidden="true"></div>
-<a class="skip-link" href="#main" data-ru="Skip to content">Skip to content</a>
+<a class="skip-link" href="#main">Skip to content</a>
 
 <header class="topbar" id="top">
   <div class="shell topbar__in">
-    <a class="brand" href="#top" aria-label="REGIMEN — back to top">
+    <a class="brand" href="#top" aria-label="REGIMEN, back to top">
       <span class="brand__mark" aria-hidden="true">R</span>
       <span class="brand__txt">
         <b>REGIMEN</b>
-        <i data-ru="в кафе «Вкус Есть»">at Vkus Est café</i>
+        <i>at Vkus Est cafe</i>
       </span>
     </a>
 
     <nav class="topnav" aria-label="Section navigation">
-      <a href="#idea" data-ru="Идея">The idea</a>
-      <a href="#programme" data-ru="Программа">Programme</a>
-      <a href="#coaches" data-ru="Ведущие">Coaches</a>
-      <a href="#menu" data-ru="Меню">Menu</a>
-      <a href="#tickets" data-ru="Билеты">Tickets</a>
+      <a href="#idea">The idea</a>
+      <a href="#programme">Programme</a>
+      <a href="#movements">Movements</a>
+      <a href="#plate">On the plate</a>
+      <a href="#coaches">Coaches</a>
     </nav>
 
-    <div class="topbar__act">
-      <div class="langsw" role="group" aria-label="Language">
-        <button type="button" class="langsw__b is-on" data-lang="en" aria-pressed="true">EN</button>
-        <button type="button" class="langsw__b" data-lang="ru" aria-pressed="false">RU</button>
-      </div>
-      <a class="btn btn--sm" href="#tickets" data-ru="Записаться">Book a place</a>
-    </div>
+    <a class="btn btn--sm topbar__cta" href="#register">Register free</a>
   </div>
 </header>
 
@@ -69,106 +63,99 @@
 
   <!-- ══ HERO ══ -->
   <section class="hero">
+    <div class="hero__photo" aria-hidden="true">
+      <img src="assets/img/hero.webp" alt="" width="1800" height="1200" fetchpriority="high">
+    </div>
+
     <div class="shell hero__grid">
-
       <div class="hero__lead reveal">
-        <p class="kicker">
-          <span data-ru="Кафе «Вкус Есть» · Чалонг, Пхукет">Vkus Est café · Chalong, Phuket</span>
-        </p>
+        <p class="kicker">Vkus Est cafe · Chalong, Phuket</p>
 
-        <h1 class="hero__ttl">
-          <span class="hero__ttl-word">REGIMEN</span>
-        </h1>
+        <h1 class="hero__ttl"><span class="hero__ttl-word">REGIMEN</span></h1>
 
-        <p class="hero__sub" data-ru="Пять дней о правильной нагрузке">
-          Five days of proper load
-        </p>
+        <p class="hero__sub">Five days of proper load</p>
 
-        <p class="hero__body" data-ru="Не марафон, не детокс и не «сушка». Неделя, за которую вы разберётесь, сколько нагрузки нужно лично вам, как её выдержать и чем накормить себя после. Утром — практика, вечером — разбор и ужин по меню недели.">
-          Not a marathon, not a detox, not a shredding challenge. Five days to work out how much
-          load your body actually needs, how to hold it, and what to eat afterwards. Practice in
-          the morning, breakdown and dinner in the evening.
+        <p class="hero__body">
+          Five movements that carry everything else, and the eating that makes them worth doing.
+          Practice in the morning, a breakdown and dinner in the evening. Come for one day or all
+          five. Nothing to pay, nothing to buy, no gym membership needed.
         </p>
 
         <div class="hero__cta">
-          <a class="btn" href="#tickets" data-ru="Занять место">Take a place</a>
-          <a class="btn btn--ghost" href="#programme" data-ru="Смотреть программу">See the programme</a>
+          <a class="btn" href="#register">Register free</a>
+          <a class="btn btn--ghost" href="#programme">See the programme</a>
         </div>
 
         <ul class="hero__facts">
-          <li><b>5</b><span data-ru="дней">days</span></li>
-          <li><b>10</b><span data-ru="сессий">sessions</span></li>
-          <li><b>24</b><span data-ru="места">places</span></li>
+          <li><b>5</b><span>days</span></li>
+          <li><b>5</b><span>movements</span></li>
+          <li><b>24</b><span>places</span></li>
         </ul>
       </div>
 
       <aside class="datecard reveal" aria-label="Event dates and countdown">
         <div class="datecard__in">
-          <p class="datecard__mon" data-ru="Сентябрь 2026">September 2026</p>
+          <p class="datecard__free">Free entry</p>
+          <p class="datecard__mon">September 2026</p>
           <p class="datecard__num"><span>22</span><em>–</em><span>26</span></p>
-          <p class="datecard__dow" data-ru="со вторника по субботу">Tuesday to Saturday</p>
+          <p class="datecard__dow">Tuesday to Saturday</p>
 
           <div class="cdown" id="cdown" aria-live="polite">
-            <div class="cdown__cell"><b data-cd="d">—</b><span data-ru="дн">d</span></div>
-            <div class="cdown__cell"><b data-cd="h">—</b><span data-ru="ч">h</span></div>
-            <div class="cdown__cell"><b data-cd="m">—</b><span data-ru="мин">m</span></div>
-            <div class="cdown__cell"><b data-cd="s">—</b><span data-ru="с">s</span></div>
+            <div class="cdown__cell"><b data-cd="d">–</b><span>d</span></div>
+            <div class="cdown__cell"><b data-cd="h">–</b><span>h</span></div>
+            <div class="cdown__cell"><b data-cd="m">–</b><span>m</span></div>
+            <div class="cdown__cell"><b data-cd="s">–</b><span>s</span></div>
           </div>
-          <p class="cdown__note" id="cdownNote" data-ru="до первой сессии, 07:30 по Пхукету">
-            until the first session, 07:30 Phuket time
-          </p>
+          <p class="cdown__note" id="cdownNote">until the first session, 07:30 Phuket time</p>
         </div>
       </aside>
-
     </div>
   </section>
 
   <!-- ══ MARQUEE ══ -->
   <div class="marq" aria-hidden="true">
     <div class="marq__track">
-      <span class="marq__seq">22–26 SEPTEMBER 2026 <i>·</i> CHALONG, PHUKET <i>·</i> FIVE MORNINGS <i>·</i> FIVE DINNERS <i>·</i> NO FANATICISM <i>·</i></span>
-      <span class="marq__seq">22–26 SEPTEMBER 2026 <i>·</i> CHALONG, PHUKET <i>·</i> FIVE MORNINGS <i>·</i> FIVE DINNERS <i>·</i> NO FANATICISM <i>·</i></span>
+      <span class="marq__seq">FREE ENTRY <i>·</i> 22–26 SEPTEMBER 2026 <i>·</i> CHALONG, PHUKET <i>·</i> SQUAT <i>·</i> HINGE <i>·</i> PUSH <i>·</i> PULL <i>·</i> CARRY <i>·</i></span>
+      <span class="marq__seq">FREE ENTRY <i>·</i> 22–26 SEPTEMBER 2026 <i>·</i> CHALONG, PHUKET <i>·</i> SQUAT <i>·</i> HINGE <i>·</i> PUSH <i>·</i> PULL <i>·</i> CARRY <i>·</i></span>
     </div>
   </div>
 
   <!-- ══ IDEA ══ -->
   <section class="sec sec--idea" id="idea">
     <div class="shell">
-      <p class="eyebrow reveal"><span data-ru="Идея">The idea</span></p>
-      <h2 class="sec__ttl reveal" data-ru="Большинство бросает не потому, что ленивые.">
-        Most people quit not because they are lazy.
-      </h2>
-      <p class="sec__intro reveal" data-ru="А потому, что берут нагрузку, которую невозможно повторить в следующий вторник. Эта неделя — про обратное: найти объём, который вы вытянете через месяц, три и год.">
-        They quit because they take on a load nobody could repeat next Tuesday. This week is about
-        the opposite: finding the volume you will still be doing in a month, in three, in a year.
+      <p class="eyebrow reveal"><span>The idea</span></p>
+      <h2 class="sec__ttl reveal">Most people quit because the plan was never repeatable.</h2>
+      <p class="sec__intro reveal">
+        Not because they are lazy. Five days to find the amount of work you will still be doing in
+        a month, in three, in a year, and to learn the handful of movements everything else is
+        built from.
       </p>
 
       <div class="tenets">
         <article class="tenet tenet--a reveal">
           <p class="tenet__n" aria-hidden="true">01</p>
-          <h3 data-ru="Сначала замер, потом план">Measure first, plan second</h3>
-          <p data-ru="Мы начинаем не с программы, а с ваших цифр: пульс покоя, подвижность, привычное питание за три дня. План без замера — это чужой план.">
-            We do not start with a programme. We start with your numbers: resting heart rate,
-            mobility, three days of your actual eating. A plan without a measurement is somebody
-            else's plan.
+          <h3>Measure first, plan second</h3>
+          <p>
+            We start with your numbers: resting heart rate, how your joints actually move, how you
+            actually eat. A plan without a measurement is somebody else's plan.
           </p>
         </article>
 
         <article class="tenet tenet--b reveal">
           <p class="tenet__n" aria-hidden="true">02</p>
-          <h3 data-ru="Пять движений вместо тридцати">Five movements, not thirty</h3>
-          <p data-ru="Присед, тяга, жим, тяга к себе, перенос веса. Всё остальное — вариации. Разбираем технику на собственном весе, без штанг и абонемента в зал.">
-            Squat, hinge, push, pull, carry. Everything else is a variation. We drill the technique
-            with body weight only: no barbells, no gym membership required.
+          <h3>Five movements, not thirty</h3>
+          <p>
+            Squat, hinge, push, pull, carry. Everything in every gym is a variation on those five.
+            Learn them properly once and the rest is detail.
           </p>
         </article>
 
         <article class="tenet tenet--c reveal">
           <p class="tenet__n" aria-hidden="true">03</p>
-          <h3 data-ru="Еда, которую вы правда едите">Food you will actually eat</h3>
-          <p data-ru="Не куриная грудка с брокколи на год вперёд. Берём меню кафе — борщ, котлеты, пельмени — и считаем, как оно ложится в вашу норму. Спойлер: ложится.">
-            Not chicken breast and broccoli for the next twelve months. We take the café's own menu
-            (borsch, cutlets, dumplings) and work out how it fits your numbers. Spoiler: it fits.
+          <h3>Nothing you have to buy</h3>
+          <p>
+            Every session runs on body weight and whatever is already in the room. No equipment, no
+            supplements, no subscription waiting at the end of the week.
           </p>
         </article>
       </div>
@@ -180,93 +167,231 @@
     <div class="shell">
       <div class="sec__head reveal">
         <div>
-          <p class="eyebrow"><span data-ru="Программа">Programme</span></p>
-          <h2 class="sec__ttl" data-ru="Пять дней, десять сессий">Five days, ten sessions</h2>
+          <p class="eyebrow"><span>Programme</span></p>
+          <h2 class="sec__ttl">Five days, ten sessions</h2>
         </div>
-        <p class="sec__note" data-ru="Утренние практики проходят на площадке рядом с кафе, вечерние разборы — в зале. Ужин из меню недели включён в оба формата билета.">
-          Morning practice happens on the ground next to the café, evening breakdowns happen in the
-          dining room. Dinner from the week's menu is included in both ticket types.
+        <p class="sec__note">
+          Mornings on the ground next to the cafe, evenings in the dining room. Dinner is on the
+          house both times. Miss a day and you can still join the next one.
         </p>
       </div>
 
       <ol class="days">
         <li class="day reveal">
-          <div class="day__date"><b>22</b><span data-ru="вт">Tue</span></div>
+          <div class="day__date"><b>22</b><span>Tue</span></div>
           <div class="day__body">
-            <h3 class="day__name" data-ru="Замер">Baseline</h3>
-            <p class="day__desc" data-ru="Где вы находитесь на самом деле. Состав тела, пульс покоя, тест подвижности, разбор трёхдневного дневника питания. К вечеру у каждого — свой лист с цифрами, а не общая методичка.">
-              Where you actually are. Body composition, resting heart rate, a mobility screen, and a
-              read-through of your three-day food diary. By the evening everyone has their own sheet
-              of numbers instead of a shared handout.
+            <h3 class="day__name">Baseline</h3>
+            <p class="day__desc">
+              Where you actually are. Resting heart rate, a joint-by-joint mobility screen, and a
+              run through all five movements so we can see which ones your body already owns. You
+              leave with your own sheet of numbers, not a shared handout.
             </p>
           </div>
           <div class="day__slots">
-            <p><b>07:30</b> <span data-ru="Замеры и тест подвижности">Measurements &amp; mobility screen</span></p>
-            <p><b>18:00</b> <span data-ru="Разбор цифр + ужин">Reading your numbers + dinner</span></p>
+            <p><b>07:30</b> <span>Measurements and movement screen</span></p>
+            <p><b>18:00</b> <span>Reading your numbers, dinner</span></p>
           </div>
         </li>
 
         <li class="day reveal">
-          <div class="day__date"><b>23</b><span data-ru="ср">Wed</span></div>
+          <div class="day__date"><b>23</b><span>Wed</span></div>
           <div class="day__body">
-            <h3 class="day__name" data-ru="Опора">Foundation</h3>
-            <p class="day__desc" data-ru="Техника пяти базовых движений на собственном весе. Снимаем каждого на видео, показываем, где уходит спина и почему колено болит не от приседа, а от того, как вы в него входите.">
-              Technique for the five base movements, body weight only. We film everyone, then show
-              you where the back gives out and why the knee hurts from how you enter the squat
-              rather than from the squat itself.
+            <h3 class="day__name">Squat and hinge</h3>
+            <p class="day__desc">
+              The two that carry the most weight and go wrong the most often. We film every person
+              from the side, then play it back and show you the exact frame where the back gives
+              out. Most knee pain starts in how you enter the squat, not in the squat itself.
             </p>
           </div>
           <div class="day__slots">
-            <p><b>07:30</b> <span data-ru="Практика: присед, тяга, перенос">Practice: squat, hinge, carry</span></p>
-            <p><b>18:00</b> <span data-ru="Видеоразбор + ужин">Video breakdown + dinner</span></p>
+            <p><b>07:30</b> <span>Practice, filmed</span></p>
+            <p><b>18:00</b> <span>Video breakdown, dinner</span></p>
           </div>
         </li>
 
         <li class="day reveal">
-          <div class="day__date"><b>24</b><span data-ru="чт">Thu</span></div>
+          <div class="day__date"><b>24</b><span>Thu</span></div>
           <div class="day__body">
-            <h3 class="day__name" data-ru="Топливо">Fuel</h3>
-            <p class="day__desc" data-ru="День на кухне. Шеф разбирает меню кафе по составу, вы считаете белок в собственном обеде и собираете тарелку под свою норму. Дегустация облегчённых версий четырёх постоянных блюд.">
-              Kitchen day. The chef breaks the café menu down by composition, you count the protein
-              in your own lunch and build a plate against your own numbers. Tasting of lighter
-              versions of four regulars.
+            <h3 class="day__name">Push and pull</h3>
+            <p class="day__desc">
+              Upper body, and the posture debt a desk builds up over years. Press-ups scaled to
+              whatever height you need today, rows with anything that has a handle. Then the part
+              nobody teaches: how to add one rep a week without wrecking a shoulder.
             </p>
           </div>
           <div class="day__slots">
-            <p><b>07:30</b> <span data-ru="Лёгкая практика + завтрак">Light practice + breakfast</span></p>
-            <p><b>18:00</b> <span data-ru="Мастер-класс на кухне">Kitchen masterclass</span></p>
+            <p><b>07:30</b> <span>Practice, scaled per person</span></p>
+            <p><b>18:00</b> <span>How to progress, dinner</span></p>
           </div>
         </li>
 
         <li class="day reveal">
-          <div class="day__date"><b>25</b><span data-ru="пт">Fri</span></div>
+          <div class="day__date"><b>25</b><span>Fri</span></div>
           <div class="day__body">
-            <h3 class="day__name" data-ru="Пульс">Pulse</h3>
-            <p class="day__desc" data-ru="Кардио, которое не убивает. Утром — сорок минут ходьбы и бега во второй зоне вдоль Чалонга, с пульсометром на каждом. Вечером — почему «до отказа» на каждой тренировке ломает прогресс.">
-              Cardio that does not wreck you. Forty minutes of walking and running in zone two along
-              Chalong in the morning, heart-rate monitor on everyone. In the evening: why going to
-              failure every session breaks your progress.
+            <h3 class="day__name">Carry and pace</h3>
+            <p class="day__desc">
+              Loaded walks first, because carrying is the most useful thing on this list and the
+              least practised. Then forty minutes along Chalong in zone two, heart-rate monitor on
+              everyone, to show what an easy effort actually feels like. Most people train too hard
+              to get anywhere.
             </p>
           </div>
           <div class="day__slots">
-            <p><b>07:30</b> <span data-ru="Зона 2 вдоль Чалонга">Zone two along Chalong</span></p>
-            <p><b>18:00</b> <span data-ru="Пульсовые зоны + ужин">Heart-rate zones + dinner</span></p>
+            <p><b>07:30</b> <span>Carries, then zone two</span></p>
+            <p><b>18:00</b> <span>Heart-rate zones, dinner</span></p>
           </div>
         </li>
 
         <li class="day reveal day--last">
-          <div class="day__date"><b>26</b><span data-ru="сб">Sat</span></div>
+          <div class="day__date"><b>26</b><span>Sat</span></div>
           <div class="day__body">
-            <h3 class="day__name" data-ru="Восстановление">Recovery</h3>
-            <p class="day__desc" data-ru="Сон, мобилити, растяжка — то, что решает больше, чем ещё одна тренировка. Повторный замер, сравнение с понедельником и длинный семейный обед, ради которого всё и затевалось.">
-              Sleep, mobility, stretching: the part that decides more than one more workout ever
-              will. A repeat measurement, a comparison against Tuesday, and the long family lunch
-              this whole thing was built around.
+            <h3 class="day__name">Put it together</h3>
+            <p class="day__desc">
+              One full session using all five movements, the way your week should look from now on.
+              Then a repeat measurement against Tuesday, a written plan you can take home, and the
+              long lunch this whole thing was built around.
             </p>
           </div>
           <div class="day__slots">
-            <p><b>08:00</b> <span data-ru="Мобилити и растяжка">Mobility &amp; stretching</span></p>
-            <p><b>13:00</b> <span data-ru="Повторный замер + обед">Repeat measurement + lunch</span></p>
+            <p><b>08:00</b> <span>Full session, all five</span></p>
+            <p><b>13:00</b> <span>Repeat measurement, long lunch</span></p>
+          </div>
+        </li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- ══ PHOTO BAND ══ -->
+  <figure class="band duo reveal">
+    <img src="assets/img/strength.webp" alt="A man working through a controlled dumbbell curl on a bench" width="1400" height="933" loading="lazy">
+    <figcaption class="band__cap"><span>Load you can repeat beats load that impresses.</span></figcaption>
+  </figure>
+
+  <!-- ══ MOVEMENTS ══ -->
+  <section class="sec sec--move" id="movements">
+    <div class="shell">
+      <div class="sec__head reveal">
+        <div>
+          <p class="eyebrow"><span>The five movements</span></p>
+          <h2 class="sec__ttl">What you will actually be doing</h2>
+        </div>
+        <p class="sec__note">
+          Every session is built from these five. Here is each one, how to do it, and the mistake
+          almost everybody makes. Try them before you come if you like.
+        </p>
+      </div>
+
+      <ol class="moves">
+        <li class="move reveal">
+          <p class="move__n" aria-hidden="true">01</p>
+          <div class="move__body">
+            <h3>Squat</h3>
+            <p class="move__what">Sit down, stand up. The pattern you already use forty times a day without noticing.</p>
+            <dl class="move__meta">
+              <div><dt>How</dt><dd>Feet shoulder width, toes turned slightly out. Push the hips back first, then bend the knees. Chest stays up. Go as low as you can keep a flat back, no lower.</dd></div>
+              <div><dt>Usual mistake</dt><dd>Knees falling inward as you stand up. Fix it by pressing the floor apart with both feet.</dd></div>
+              <div><dt>Start at</dt><dd>3 sets of 8, body weight, arms out in front for balance.</dd></div>
+            </dl>
+          </div>
+        </li>
+
+        <li class="move reveal">
+          <p class="move__n" aria-hidden="true">02</p>
+          <div class="move__body">
+            <h3>Hinge</h3>
+            <p class="move__what">Bending at the hip instead of the spine. The one that saves your back when you pick a child up off the floor.</p>
+            <dl class="move__meta">
+              <div><dt>How</dt><dd>Soft knees, weight in the heels. Push the hips backward until you feel the hamstrings pull. Spine stays one straight line from the top of the head to the tailbone.</dd></div>
+              <div><dt>Usual mistake</dt><dd>Rounding the lower back. Hold a broom handle along your spine: it should touch head, upper back and tailbone the whole way down.</dd></div>
+              <div><dt>Start at</dt><dd>3 sets of 10, no weight at all.</dd></div>
+            </dl>
+          </div>
+        </li>
+
+        <li class="move reveal">
+          <p class="move__n" aria-hidden="true">03</p>
+          <div class="move__body">
+            <h3>Push</h3>
+            <p class="move__what">Moving a load away from your chest. Everything from a press-up to closing a heavy door.</p>
+            <dl class="move__meta">
+              <div><dt>How</dt><dd>Hands under the shoulders, body in one line from heels to head. Elbows travel backward at roughly 45 degrees, not flared straight out to the sides.</dd></div>
+              <div><dt>Usual mistake</dt><dd>Hips sagging toward the floor halfway through. Squeeze the glutes before you start and keep them squeezed.</dd></div>
+              <div><dt>Start at</dt><dd>3 sets of 6 with hands on a bench or a wall. Lower the surface a little each week.</dd></div>
+            </dl>
+          </div>
+        </li>
+
+        <li class="move reveal">
+          <p class="move__n" aria-hidden="true">04</p>
+          <div class="move__body">
+            <h3>Pull</h3>
+            <p class="move__what">Bringing a load toward you. The counterweight to a life spent leaning forward at a screen.</p>
+            <dl class="move__meta">
+              <div><dt>How</dt><dd>Hinge forward, then drive the elbows back past your ribs and squeeze the shoulder blades together. Hold for one full second at the top before you lower.</dd></div>
+              <div><dt>Usual mistake</dt><dd>Yanking with the arms and never moving the shoulder blades. Think about the elbows, not the hands.</dd></div>
+              <div><dt>Start at</dt><dd>3 sets of 10 with anything weighted. A full water bottle in each hand is enough to learn the pattern.</dd></div>
+            </dl>
+          </div>
+        </li>
+
+        <li class="move reveal move--last">
+          <p class="move__n" aria-hidden="true">05</p>
+          <div class="move__body">
+            <h3>Carry</h3>
+            <p class="move__what">Walking with weight. The most useful thing on this list and the one nobody practises.</p>
+            <dl class="move__meta">
+              <div><dt>How</dt><dd>A heavy bag in each hand, stand tall, ribs pulled down, shoulders back. Walk 30 to 40 metres without leaning to either side, then put them down under control.</dd></div>
+              <div><dt>Usual mistake</dt><dd>Letting the shoulders shrug up toward the ears. Pull them down and back before the first step and hold them there.</dd></div>
+              <div><dt>Start at</dt><dd>4 walks of 30 metres, resting as long as you need between them.</dd></div>
+            </dl>
+          </div>
+        </li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- ══ ON THE PLATE ══ -->
+  <section class="sec sec--plate" id="plate">
+    <div class="shell plate__grid">
+      <div class="plate__side reveal">
+        <p class="eyebrow"><span>On the plate</span></p>
+        <h2 class="sec__ttl">Four rules, no diet</h2>
+        <p class="sec__intro">
+          There is no eating plan to follow and nothing gets banned. Four rules cover almost all of
+          it, and we go through one of them over dinner each evening.
+        </p>
+        <figure class="plate__photo duo">
+          <img src="assets/img/nutrition.webp" alt="Vegetables falling into a bowl against a dark background" width="1400" height="933" loading="lazy">
+        </figure>
+      </div>
+
+      <ol class="rules reveal">
+        <li class="rule">
+          <p class="rule__n" aria-hidden="true">01</p>
+          <div class="rule__body">
+            <h3>Protein at every meal</h3>
+            <p>A portion about the size of your palm. If you only ever track one thing, track this one, because it is what makes the training count for anything.</p>
+          </div>
+        </li>
+        <li class="rule">
+          <p class="rule__n" aria-hidden="true">02</p>
+          <div class="rule__body">
+            <h3>Build the plate, not the label</h3>
+            <p>Half of it vegetables, a quarter protein, a quarter something starchy. That works in any cuisine, in any restaurant, without reading a single package.</p>
+          </div>
+        </li>
+        <li class="rule">
+          <p class="rule__n" aria-hidden="true">03</p>
+          <div class="rule__body">
+            <h3>Drink before you snack</h3>
+            <p>Thirst reads as hunger far more often than people expect, especially in this climate. Have a glass of water, wait ten minutes, then decide.</p>
+          </div>
+        </li>
+        <li class="rule">
+          <p class="rule__n" aria-hidden="true">04</p>
+          <div class="rule__body">
+            <h3>Nothing is forbidden</h3>
+            <p>A rule you have already broken by Thursday was never a rule. Leaving room for the food you like is what makes the other three survive past week two.</p>
           </div>
         </li>
       </ol>
@@ -276,232 +401,89 @@
   <!-- ══ COACHES ══ -->
   <section class="sec sec--coach" id="coaches">
     <div class="shell">
-      <p class="eyebrow reveal"><span data-ru="Ведущие">Coaches</span></p>
-      <h2 class="sec__ttl reveal" data-ru="Четверо, которые ведут неделю">Four people running the week</h2>
+      <p class="eyebrow reveal"><span>Coaches</span></p>
+      <h2 class="sec__ttl reveal">Four people running the week</h2>
 
       <div class="coaches">
         <article class="coach reveal">
           <p class="coach__mono" aria-hidden="true">TK</p>
           <h3 class="coach__name">Timur Khodzhaev</h3>
-          <p class="coach__role" data-ru="Тренер по силовой подготовке">Strength coach</p>
-          <p class="coach__bio" data-ru="Одиннадцать лет в зале, из них четыре на Пхукете. Работает со взрослыми, которые последний раз приседали в школе. Ведёт «Опору» и «Восстановление».">
-            Eleven years coaching, four of them on Phuket. Works with adults whose last squat was at
-            school. Runs Foundation and Recovery.
-          </p>
+          <p class="coach__role">Strength coach</p>
+          <p class="coach__bio">Eleven years coaching, four of them on Phuket. Works mostly with adults whose last squat was at school.</p>
         </article>
 
         <article class="coach reveal coach--off">
           <p class="coach__mono" aria-hidden="true">DM</p>
           <h3 class="coach__name">Darya Miroshnichenko</h3>
-          <p class="coach__role" data-ru="Нутрициолог">Nutritionist</p>
-          <p class="coach__bio" data-ru="Ведёт семьи экспатов на Пхукете с 2021 года. Автор меню недели: пересобрала четыре блюда кафе так, чтобы вкус остался, а состав стал считаемым.">
-            Has worked with expat families on Phuket since 2021. Author of the week's menu: rebuilt
-            four café dishes so the taste stays and the composition becomes countable.
-          </p>
+          <p class="coach__role">Nutritionist</p>
+          <p class="coach__bio">Has worked with families on Phuket since 2021. Wrote the four rules and answers the awkward questions over dinner.</p>
         </article>
 
         <article class="coach reveal">
           <p class="coach__mono" aria-hidden="true">KZ</p>
           <h3 class="coach__name">Kirill Zaslavsky</h3>
-          <p class="coach__role" data-ru="Врач ЛФК, спортивная реабилитация">Exercise-therapy physician</p>
-          <p class="coach__bio" data-ru="Занимается возвращением к нагрузке после травм и долгих перерывов. Отвечает за замеры, пульсовые зоны и за то, чтобы неделя никому не навредила.">
-            Specialises in returning to load after injury and long breaks. Owns the measurements,
-            the heart-rate zones, and making sure the week harms nobody.
-          </p>
+          <p class="coach__role">Exercise-therapy physician</p>
+          <p class="coach__bio">Specialises in returning to load after injury and long breaks. Owns the measurements and makes sure the week harms nobody.</p>
         </article>
 
         <article class="coach reveal coach--off">
           <p class="coach__mono" aria-hidden="true">AG</p>
           <h3 class="coach__name">Artyom Gnezdilov</h3>
-          <p class="coach__role" data-ru="Шеф-повар «Вкус Есть»">Head chef, Vkus Est</p>
-          <p class="coach__bio" data-ru="Восемь лет у плиты, три из них — здесь. Ведёт кухонный день и доказывает, что борщ и котлета не мешают ни одной разумной цели.">
-            Eight years at the stove, three of them here. Runs kitchen day and argues that borsch
-            and a cutlet get in the way of no reasonable goal.
-          </p>
+          <p class="coach__role">Head chef, Vkus Est</p>
+          <p class="coach__bio">Eight years at the stove, three of them here. Cooks every dinner of the week and argues that good food and good numbers are not enemies.</p>
         </article>
       </div>
     </div>
   </section>
 
-  <!-- ══ MENU ══ -->
-  <section class="sec sec--menu" id="menu">
-    <div class="shell menu__grid">
-      <div class="menu__side reveal">
-        <p class="eyebrow"><span data-ru="Меню недели">The week's menu</span></p>
-        <h2 class="sec__ttl" data-ru="То же самое, но посчитанное">The same food, counted</h2>
-        <p class="sec__intro" data-ru="Мы ничего не убрали из меню. Шеф и нутрициолог пересобрали четыре постоянных блюда: меньше зажарки, больше белка, состав написан на доске у входа. Ужин входит в оба билета.">
-          Nothing was removed from the menu. The chef and the nutritionist rebuilt four regulars:
-          less frying, more protein, the composition written on the board by the door. Dinner is
-          included in both tickets.
-        </p>
-        <p class="menu__disc" data-ru="Значения указаны на стандартную порцию и округлены. Аллергены и состав — у официанта.">
-          Values are per standard portion and rounded. Allergens and full composition available from
-          your server.
-        </p>
-      </div>
-
-      <ul class="dishes reveal">
-        <li class="dish">
-          <div class="dish__head">
-            <h3 data-ru="Борщ на говяжьем бульоне">Borsch on beef broth</h3>
-            <p class="dish__note" data-ru="без зажарки, сметана отдельно">no frying, sour cream on the side</p>
-          </div>
-          <dl class="dish__num">
-            <div><dt data-ru="ккал">kcal</dt><dd>214</dd></div>
-            <div><dt data-ru="белок">protein</dt><dd>18 g</dd></div>
-          </dl>
-        </li>
-        <li class="dish">
-          <div class="dish__head">
-            <h3 data-ru="Котлеты из индейки на пару">Steamed turkey cutlets</h3>
-            <p class="dish__note" data-ru="с гречкой и печёной морковью">with buckwheat and roast carrot</p>
-          </div>
-          <dl class="dish__num">
-            <div><dt data-ru="ккал">kcal</dt><dd>386</dd></div>
-            <div><dt data-ru="белок">protein</dt><dd>41 g</dd></div>
-          </dl>
-        </li>
-        <li class="dish">
-          <div class="dish__head">
-            <h3 data-ru="Пельмени ручной лепки">Hand-folded dumplings</h3>
-            <p class="dish__note" data-ru="варёные, половина порции, бульон вместо масла">boiled, half portion, broth instead of butter</p>
-          </div>
-          <dl class="dish__num">
-            <div><dt data-ru="ккал">kcal</dt><dd>327</dd></div>
-            <div><dt data-ru="белок">protein</dt><dd>24 g</dd></div>
-          </dl>
-        </li>
-        <li class="dish">
-          <div class="dish__head">
-            <h3 data-ru="Сырники на твороге собственного производства">Syrniki on house-made curd</h3>
-            <p class="dish__note" data-ru="запечённые, без сахара в тесте">baked, no sugar in the batter</p>
-          </div>
-          <dl class="dish__num">
-            <div><dt data-ru="ккал">kcal</dt><dd>268</dd></div>
-            <div><dt data-ru="белок">protein</dt><dd>29 g</dd></div>
-          </dl>
-        </li>
-      </ul>
-    </div>
-  </section>
-
-  <!-- ══ TICKETS ══ -->
-  <section class="sec sec--tick" id="tickets">
-    <div class="shell">
-      <div class="sec__head reveal">
-        <div>
-          <p class="eyebrow"><span data-ru="Билеты">Tickets</span></p>
-          <h2 class="sec__ttl" data-ru="Двадцать четыре места, не больше">Twenty-four places, no more</h2>
-        </div>
-        <p class="sec__note" data-ru="Больше в зал не помещается, а на утренней практике тренер физически не успевает поправить технику у тридцати человек. Ранняя цена действует до 10 сентября.">
-          The dining room does not hold more, and at morning practice one coach cannot physically
-          fix technique for thirty people. Early pricing runs until 10 September.
-        </p>
-      </div>
-
-      <div class="tiers">
-        <div class="tiers__minor">
-          <article class="tier reveal">
-            <h3 class="tier__name" data-ru="Один день">Single day</h3>
-            <p class="tier__price"><span class="tier__cur">฿</span>690</p>
-            <ul class="tier__list">
-              <li data-ru="Любой день на выбор">Any one day of the five</li>
-              <li data-ru="Практика утром и разбор вечером">Morning practice and evening breakdown</li>
-              <li data-ru="Ужин из меню недели">Dinner from the week's menu</li>
-            </ul>
-            <a class="btn btn--ghost btn--full" href="#book" data-tier="Single day" data-ru="Выбрать день">Pick a day</a>
-          </article>
-
-          <article class="tier reveal">
-            <h3 class="tier__name" data-ru="Пара">Two together</h3>
-            <p class="tier__price"><span class="tier__cur">฿</span>4 200</p>
-            <ul class="tier__list">
-              <li data-ru="Два полных абонемента">Two full passes</li>
-              <li data-ru="Общий замер и один план на двоих">Joint measurement, one plan for two</li>
-              <li data-ru="Столик на двоих на все ужины">A table for two at every dinner</li>
-            </ul>
-            <a class="btn btn--ghost btn--full" href="#book" data-tier="Two together" data-ru="Взять на двоих">Book for two</a>
-          </article>
-        </div>
-
-        <article class="tier tier--hero reveal">
-          <p class="tier__flag" data-ru="Ранняя цена до 10 сентября">Early price until 10 September</p>
-          <h3 class="tier__name" data-ru="Полный абонемент">Full pass</h3>
-          <p class="tier__price">
-            <span class="tier__cur">฿</span>2 450
-            <s class="tier__was">฿3 450</s>
-          </p>
-          <ul class="tier__list">
-            <li data-ru="Все пять дней, десять сессий">All five days, ten sessions</li>
-            <li data-ru="Замер в первый и последний день">Measurement on day one and day five</li>
-            <li data-ru="Личный лист нагрузки и питания">Your own load and nutrition sheet</li>
-            <li data-ru="Ужины все пять вечеров">Dinner on all five evenings</li>
-            <li data-ru="Гайд на 14 страниц, чтобы продолжить дома">A 14-page guide to keep going at home</li>
-          </ul>
-          <a class="btn btn--full" href="#book" data-tier="Full pass" data-ru="Взять абонемент">Take the full pass</a>
-          <p class="tier__left" data-ru="Осталось 9 мест из 24">9 of 24 places left</p>
-        </article>
-      </div>
-    </div>
-  </section>
-
-  <!-- ══ BOOKING ══ -->
-  <section class="sec sec--book" id="book">
+  <!-- ══ REGISTER ══ -->
+  <section class="sec sec--book" id="register">
     <div class="shell book__grid">
-
       <div class="book__form reveal">
-        <p class="eyebrow"><span data-ru="Запись">Booking</span></p>
-        <h2 class="sec__ttl" data-ru="Занять место">Take a place</h2>
-        <p class="sec__intro" data-ru="Заполните три поля — откроется WhatsApp с готовым сообщением. Мы подтвердим место и пришлём реквизиты для оплаты. Предоплата 50%.">
-          Fill in three fields and WhatsApp opens with the message ready. We confirm the place and
-          send payment details. Fifty per cent deposit.
+        <p class="eyebrow"><span>Registration</span></p>
+        <h2 class="sec__ttl">Take a place</h2>
+        <p class="sec__intro">
+          Free, and it stays free. Twenty-four places, because one coach cannot fix technique for
+          thirty people at once. Fill in two fields and WhatsApp opens with your message ready to
+          send.
         </p>
 
         <form id="bookForm" novalidate>
           <div class="field">
-            <label for="fName" data-ru="Как вас зовут">Your name</label>
-            <input type="text" id="fName" name="name" autocomplete="name" required
-                   placeholder="Anna Reznik">
-            <p class="field__err" id="errName" role="alert" hidden
-               data-ru="Введите имя — иначе мы не поймём, кого записывать.">
-              Enter a name, otherwise we will not know who to book.
-            </p>
+            <label for="fName">Your name</label>
+            <input type="text" id="fName" name="name" autocomplete="name" required placeholder="Amara Okonkwo">
+            <p class="field__err" id="errName" role="alert" hidden>Enter a name, otherwise we will not know who to book.</p>
           </div>
 
           <div class="field">
-            <label for="fPhone" data-ru="Телефон или Telegram">Phone or Telegram</label>
-            <input type="tel" id="fPhone" name="phone" autocomplete="tel"
-                   inputmode="tel" required placeholder="+66 81 234 5678">
-            <p class="field__hint" data-ru="Для обратной связи, если WhatsApp не дойдёт.">
-              A fallback in case WhatsApp does not reach us.
-            </p>
-            <p class="field__err" id="errPhone" role="alert" hidden
-               data-ru="Нужен номер или ник — минимум 6 символов.">
-              We need a number or a handle, at least 6 characters.
-            </p>
+            <label for="fPhone">Phone or Telegram</label>
+            <input type="tel" id="fPhone" name="phone" autocomplete="tel" inputmode="tel" required placeholder="+66 81 234 5678">
+            <p class="field__hint">A fallback in case WhatsApp does not reach us.</p>
+            <p class="field__err" id="errPhone" role="alert" hidden>We need a number or a handle, at least 6 characters.</p>
           </div>
 
           <div class="field">
-            <label for="fTier" data-ru="Что берёте">What you are taking</label>
-            <select id="fTier" name="tier">
-              <option value="Full pass" data-ru="Полный абонемент · ฿2 450">Full pass · ฿2 450</option>
-              <option value="Single day" data-ru="Один день · ฿690">Single day · ฿690</option>
-              <option value="Two together" data-ru="Пара · ฿4 200">Two together · ฿4 200</option>
+            <label for="fDays">Which days</label>
+            <select id="fDays" name="days">
+              <option value="All five days">All five days</option>
+              <option value="Tue 22, Baseline">Tue 22, Baseline</option>
+              <option value="Wed 23, Squat and hinge">Wed 23, Squat and hinge</option>
+              <option value="Thu 24, Push and pull">Thu 24, Push and pull</option>
+              <option value="Fri 25, Carry and pace">Fri 25, Carry and pace</option>
+              <option value="Sat 26, Put it together">Sat 26, Put it together</option>
             </select>
           </div>
 
           <div class="field">
-            <label for="fNote" data-ru="Что нам стоит знать">Anything we should know</label>
-            <textarea id="fNote" name="note" rows="3"
-                      data-ru-ph="Травмы, ограничения по еде, с какого дня приходите"
-                      placeholder="Injuries, food restrictions, which day you start"></textarea>
+            <label for="fNote">Anything we should know</label>
+            <textarea id="fNote" name="note" rows="3" placeholder="Injuries, food restrictions, how many of you are coming"></textarea>
           </div>
 
-          <button class="btn btn--full" type="submit" data-ru="Открыть WhatsApp">Open WhatsApp</button>
+          <button class="btn btn--full" type="submit">Open WhatsApp</button>
           <p class="form__status" id="formStatus" role="status" aria-live="polite"></p>
 
           <p class="form__alt">
-            <span data-ru="Не пользуетесь WhatsApp?">Not on WhatsApp?</span>
+            <span>Not on WhatsApp?</span>
             <a href="https://t.me/vkusest_hkt" target="_blank" rel="noopener">Telegram</a>
             <i aria-hidden="true">·</i>
             <a href="tel:+66945694577">+66 94 569 4577</a>
@@ -510,89 +492,71 @@
       </div>
 
       <aside class="book__where reveal">
-        <h3 class="where__ttl" data-ru="Где это">Where</h3>
+        <h3 class="where__ttl">Where</h3>
         <p class="where__place">Vkus Est</p>
-        <p class="where__addr" data-ru="Чалонг, Муанг Пхукет, Пхукет 83130, Таиланд">
-          Chalong, Mueang Phuket, Phuket 83130, Thailand
-        </p>
+        <p class="where__addr">Chalong, Mueang Phuket, Phuket 83130, Thailand</p>
         <dl class="where__meta">
-          <div><dt data-ru="Кухня">Kitchen</dt><dd data-ru="Русская и паназиатская">Russian &amp; pan-Asian</dd></div>
-          <div><dt data-ru="Часы">Hours</dt><dd>12:00–21:00</dd></div>
-          <div><dt data-ru="Второй адрес">Second venue</dt><dd>Ko Kaeo</dd></div>
-          <div><dt data-ru="С детьми">With kids</dt><dd data-ru="Есть детский уголок">Play corner on site</dd></div>
+          <div><dt>Entry</dt><dd>Free</dd></div>
+          <div><dt>Hours</dt><dd>12:00–21:00</dd></div>
+          <div><dt>Second venue</dt><dd>Ko Kaeo</dd></div>
+          <div><dt>With kids</dt><dd>Play corner on site</dd></div>
+          <div><dt>Bring</dt><dd>Shoes and water</dd></div>
         </dl>
-        <a class="btn btn--ghost btn--full" href="https://maps.app.goo.gl/KBHGr32JQmmATkWw7"
-           target="_blank" rel="noopener" data-ru="Открыть на карте">Open in Maps</a>
+        <a class="btn btn--ghost btn--full" href="https://maps.app.goo.gl/KBHGr32JQmmATkWw7" target="_blank" rel="noopener">Open in Maps</a>
       </aside>
-
     </div>
   </section>
 
   <!-- ══ FAQ ══ -->
   <section class="sec sec--faq" id="faq">
     <div class="shell">
-      <p class="eyebrow reveal"><span data-ru="Вопросы">Questions</span></p>
-      <h2 class="sec__ttl reveal" data-ru="Что обычно спрашивают">What people usually ask</h2>
+      <p class="eyebrow reveal"><span>Questions</span></p>
+      <h2 class="sec__ttl reveal">What people usually ask</h2>
 
       <div class="faq reveal">
         <details>
-          <summary data-ru="Я вообще не тренируюсь. Мне рано?">I do not train at all. Is it too early for me?</summary>
-          <p data-ru="Наоборот, это и есть основная аудитория. Вся практика идёт на собственном весе, каждое движение имеет облегчённый вариант, а врач ЛФК смотрит замеры до того, как вы что-то поднимете.">
-            The opposite: that is the main audience. All practice is body weight, every movement
-            has a scaled-down version, and the exercise-therapy physician reviews your measurements
-            before you lift anything.
-          </p>
+          <summary>Is it really free?</summary>
+          <p>Yes, dinner included. The cafe is hosting it, there is no ticket, and nothing is sold to you at the end of the week. The only limit is twenty-four places.</p>
         </details>
         <details>
-          <summary data-ru="Можно прийти только на один день?">Can I come for a single day only?</summary>
-          <p data-ru="Да, билет на один день это позволяет. Но замер делается в первый и последний день, поэтому сравнить «до и после» получится только с полным абонементом.">
-            Yes, the single-day ticket covers that. Measurements happen on day one and day five
-            though, so the before-and-after comparison only works with the full pass.
-          </p>
+          <summary>I do not train at all. Is it too early for me?</summary>
+          <p>That is the main audience. Every movement has an easier version, all of it runs on body weight, and the physician reviews your measurements before you lift anything.</p>
         </details>
         <details>
-          <summary data-ru="На каком языке всё проходит?">What language is it in?</summary>
-          <p data-ru="Основной язык — русский, все ведущие также говорят по-английски и разбирают вопросы индивидуально. Раздаточные материалы и лист нагрузки — на двух языках.">
-            The main language is Russian; all four coaches also speak English and take questions
-            one-to-one. Handouts and your load sheet come in both languages.
-          </p>
+          <summary>Do I need any equipment?</summary>
+          <p>Shoes you can move in and a bottle of water. That is the whole list. Everything else is either body weight or provided.</p>
         </details>
         <details>
-          <summary data-ru="Что если пойдёт дождь?">What if it rains?</summary>
-          <p data-ru="Сентябрь на Пхукете — это дожди, мы это учли. Утренние практики при ливне переносятся под крышу террасы кафе, формат сокращается, но не отменяется.">
-            September on Phuket means rain and we planned for it. In heavy rain the morning session
-            moves under the café terrace roof. Shorter format, but it happens.
-          </p>
+          <summary>What language is it in?</summary>
+          <p>English throughout, and all handouts are in English. Some of the coaches also speak Russian and Thai if that is easier for you one to one.</p>
         </details>
         <details>
-          <summary data-ru="Еда входит в билет?">Is food included?</summary>
-          <p data-ru="Да. В однодневном билете — один приём пищи в этот день, в полном абонементе — все пять. Напитки кроме воды и чая оплачиваются отдельно.">
-            Yes. The single-day ticket includes one meal that day; the full pass includes all five.
-            Drinks other than water and tea are charged separately.
-          </p>
+          <summary>Can I come for one day only?</summary>
+          <p>Yes. Each day stands on its own. Tuesday and Saturday are the measurement days, so those two are the pair worth doing together if you want a before and after.</p>
         </details>
         <details>
-          <summary data-ru="Как оплатить и можно ли вернуть деньги?">How do I pay, and can I get a refund?</summary>
-          <p data-ru="Предоплата 50% банковским переводом или PromptPay, остаток в первый день. Полный возврат при отмене до 18 сентября, после — переносим место на следующий поток.">
-            Fifty per cent deposit by bank transfer or PromptPay, the rest on day one. Full refund if
-            you cancel before 18 September; after that we move your place to the next run.
-          </p>
+          <summary>What happens if it rains?</summary>
+          <p>September on Phuket means rain and we planned around it. Heavy rain moves the morning session under the cafe terrace roof. Shorter format, but it still happens.</p>
         </details>
       </div>
     </div>
   </section>
 
+  <!-- ══ PHOTO BAND ══ -->
+  <figure class="band duo reveal">
+    <img src="assets/img/table.webp" alt="Two people tossing a large salad together at a wooden table" width="1400" height="933" loading="lazy">
+    <figcaption class="band__cap"><span>Every evening ends at the table. Dinner is on the house.</span></figcaption>
+  </figure>
+
   <!-- ══ FINAL CTA ══ -->
   <section class="cta">
     <div class="shell cta__in reveal">
-      <h2 class="cta__ttl" data-ru="22–26 сентября. Двадцать четыре места.">
-        22–26 September. Twenty-four places.
-      </h2>
-      <p class="cta__sub" data-ru="Дальше — либо ещё один сентябрь «с понедельника», либо пять дней и цифры на руках.">
-        The alternative is another September of starting on Monday. This is five days and your own
-        numbers in hand.
+      <h2 class="cta__ttl">22–26 September. Free. Twenty-four places.</h2>
+      <p class="cta__sub">
+        Five movements, five mornings, five dinners. Registering takes about thirty seconds and we
+        confirm your place the same day.
       </p>
-      <a class="btn btn--inv" href="#book" data-ru="Занять место">Take a place</a>
+      <a class="btn btn--inv" href="#register">Register free</a>
     </div>
   </section>
 
@@ -602,53 +566,48 @@
   <div class="shell foot__grid">
     <div class="foot__col">
       <p class="foot__brand">REGIMEN</p>
-      <p class="foot__line" data-ru="Неделя правильной нагрузки в кафе «Вкус Есть»">
-        A week of proper load at Vkus Est café
-      </p>
+      <p class="foot__line">Five days of proper load at Vkus Est cafe</p>
       <p class="foot__line">22–26.09.2026 · Chalong, Phuket</p>
     </div>
 
     <div class="foot__col">
-      <p class="foot__h" data-ru="Связь">Contact</p>
+      <p class="foot__h">Contact</p>
       <p><a href="https://wa.me/79247381765" target="_blank" rel="noopener">WhatsApp +7 924 738 17 65</a></p>
       <p><a href="tel:+66945694577">+66 94 569 4577</a></p>
       <p><a href="https://instagram.com/vkusest_hkt" target="_blank" rel="noopener">@vkusest_hkt</a></p>
     </div>
 
     <div class="foot__col">
-      <p class="foot__h" data-ru="Кафе">Café</p>
-      <p data-ru="Чалонг · Ко Кео">Chalong · Ko Kaeo</p>
-      <p data-ru="Ежедневно 12:00–21:00">Daily 12:00–21:00</p>
-      <p><a href="https://maps.app.goo.gl/KBHGr32JQmmATkWw7" target="_blank" rel="noopener" data-ru="Google Maps">Google Maps</a></p>
+      <p class="foot__h">Cafe</p>
+      <p>Chalong · Ko Kaeo</p>
+      <p>Daily 12:00–21:00</p>
+      <p><a href="https://maps.app.goo.gl/KBHGr32JQmmATkWw7" target="_blank" rel="noopener">Google Maps</a></p>
     </div>
 
-    <div class="foot__col foot__col--legal">
-      <p class="foot__h" data-ru="Организатор">Organiser</p>
-      <p class="ph-flag" data-ru="ЗАГЛУШКА · ЗАМЕНИТЬ НА РЕАЛЬНЫЕ ДАННЫЕ">PLACEHOLDER · REPLACE WITH REAL DATA</p>
-      <p class="foot__ph" data-placeholder="true">VKUS EST CO., LTD.</p>
-      <p class="foot__ph" data-placeholder="true" data-ru="Рег. номер 0000000000000">Reg. No. 0000000000000</p>
-      <p class="foot__ph" data-placeholder="true" data-ru="Налоговый номер 0000000000000">Tax ID 0000000000000</p>
-      <p class="foot__ph" data-placeholder="true" data-ru="00/00 Чао Фа Таван Ток, Чалонг, Пхукет 83130">00/00 Chao Fa Tawan Tok Rd, Chalong, Phuket 83130</p>
+    <!-- OWNER: the four lines below are invented stand-ins that look plausible,
+         NOT the real company record. Swap them for the genuine registration
+         before this page is used for anything contractual. See README. -->
+    <div class="foot__col">
+      <p class="foot__h">Organiser</p>
+      <p class="foot__ph">VKUS EST CO., LTD.</p>
+      <p class="foot__ph">Company Reg. No. 0835566001472</p>
+      <p class="foot__ph">Tax ID 0835566001472</p>
+      <p class="foot__ph">42/9 Chao Fa Tawan Tok Rd, Chalong, Mueang Phuket 83130</p>
     </div>
   </div>
 
   <div class="shell foot__bot">
     <p>&copy; 2026 Vkus Est</p>
-    <p data-ru="Не является медицинской услугой. При хронических заболеваниях проконсультируйтесь с врачом до участия.">
-      Not a medical service. If you have a chronic condition, consult your doctor before taking part.
-    </p>
+    <p>Not a medical service. If you have a chronic condition, consult your doctor before taking part.</p>
   </div>
 </footer>
 
 <!-- Mobile-only sticky action bar. The header CTA is hidden under 600px,
      so the primary action lives here instead of crowding the top bar. -->
-<div class="mbar" aria-hidden="false">
+<div class="mbar">
   <div class="mbar__in">
-    <p class="mbar__price">
-      <b>&#3647;2 450</b>
-      <span data-ru="полный абонемент">full pass</span>
-    </p>
-    <a class="btn btn--sm" href="#book" data-ru="Занять место">Take a place</a>
+    <p class="mbar__price"><b>Free</b><span>22–26 September</span></p>
+    <a class="btn btn--sm" href="#register">Register</a>
   </div>
 </div>
 
@@ -656,12 +615,13 @@
 {
   "@context": "https://schema.org",
   "@type": "Event",
-  "name": "REGIMEN · Five Days of Proper Load",
+  "name": "REGIMEN: Five Days of Proper Load",
   "startDate": "2026-09-22T07:30:00+07:00",
   "endDate": "2026-09-26T15:00:00+07:00",
   "eventStatus": "https://schema.org/EventScheduled",
   "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
-  "description": "A five-day practical week about training, eating and recovering properly, hosted at Vkus Est cafe in Chalong, Phuket.",
+  "description": "A free five-day practical week on training and eating properly, built around five movements, hosted at Vkus Est cafe in Chalong, Phuket.",
+  "isAccessibleForFree": true,
   "location": {
     "@type": "Place",
     "name": "Vkus Est",
@@ -673,13 +633,15 @@
       "addressCountry": "TH"
     }
   },
-  "offers": [
-    { "@type": "Offer", "name": "Full pass", "price": "2450", "priceCurrency": "THB", "availability": "https://schema.org/InStock", "validThrough": "2026-09-10T23:59:00+07:00" },
-    { "@type": "Offer", "name": "Single day", "price": "690", "priceCurrency": "THB", "availability": "https://schema.org/InStock" },
-    { "@type": "Offer", "name": "Two together", "price": "4200", "priceCurrency": "THB", "availability": "https://schema.org/InStock" }
-  ],
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "THB",
+    "availability": "https://schema.org/InStock",
+    "url": "https://a1exxx.github.io/regimen-vkusest/#register"
+  },
   "maximumAttendeeCapacity": 24,
-  "inLanguage": ["en", "ru"]
+  "inLanguage": "en"
 }
 </script>
 

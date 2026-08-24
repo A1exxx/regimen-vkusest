@@ -1,67 +1,28 @@
 /* ============================================================
    REGIMEN — Vkus Est, Chalong Phuket
-   Vanilla, no dependencies. Four concerns:
-   language toggle, countdown, scroll reveal, WhatsApp booking.
+   Vanilla, no dependencies. Three concerns:
+   countdown, scroll reveal, WhatsApp registration.
    ============================================================ */
 (function () {
   'use strict';
 
-  /* ── 1. LANGUAGE ─────────────────────────────────────────
-     English lives in the markup, Russian in data-ru="".
-     Both strings sit side by side so a non-developer can edit
-     the page without touching a dictionary file.             */
-
-  var LANG_KEY = 'regimen.lang';
   var htmlEl = document.documentElement;
-  var langButtons = document.querySelectorAll('.langsw__b');
 
-  function applyLang(lang) {
-    var toRu = lang === 'ru';
-
-    document.querySelectorAll('[data-ru]').forEach(function (el) {
-      if (!el.hasAttribute('data-en')) el.setAttribute('data-en', el.textContent.trim());
-      el.textContent = toRu ? el.getAttribute('data-ru') : el.getAttribute('data-en');
-    });
-
-    document.querySelectorAll('[data-ru-ph]').forEach(function (el) {
-      if (!el.hasAttribute('data-en-ph')) el.setAttribute('data-en-ph', el.placeholder);
-      el.placeholder = toRu ? el.getAttribute('data-ru-ph') : el.getAttribute('data-en-ph');
-    });
-
-    htmlEl.lang = lang;
-
-    langButtons.forEach(function (b) {
-      var on = b.dataset.lang === lang;
-      b.classList.toggle('is-on', on);
-      b.setAttribute('aria-pressed', String(on));
-    });
-
-    try { localStorage.setItem(LANG_KEY, lang); } catch (e) { /* private mode */ }
-    renderCountdown();
-  }
-
-  langButtons.forEach(function (b) {
-    b.addEventListener('click', function () { applyLang(b.dataset.lang); });
-  });
-
-  /* ── 2. COUNTDOWN ────────────────────────────────────────
+  /* ── 1. COUNTDOWN ────────────────────────────────────────
      First session: 22 Sep 2026, 07:30 Phuket (UTC+7).
-     Fixed offset in the literal, so it is correct from any
-     visitor timezone.                                        */
+     The offset is explicit in the literal, so the counter is
+     correct from any visitor's timezone.                     */
 
   var START = new Date('2026-09-22T07:30:00+07:00').getTime();
   var END   = new Date('2026-09-26T15:00:00+07:00').getTime();
-  var cdEl   = document.getElementById('cdown');
-  var noteEl = document.getElementById('cdownNote');
+  var cdEl    = document.getElementById('cdown');
+  var noteEl  = document.getElementById('cdownNote');
   var cdTimer = null;
 
   var CD_COPY = {
-    en: { running: 'until the first session, 07:30 Phuket time',
-          live:    'the week is running right now',
-          over:    'this run has finished. Write to us about the next one' },
-    ru: { running: 'до первой сессии, 07:30 по Пхукету',
-          live:    'неделя идёт прямо сейчас',
-          over:    'этот поток закончился — напишите про следующий' }
+    running: 'until the first session, 07:30 Phuket time',
+    live:    'the week is running right now',
+    over:    'this run has finished. Write to us about the next one'
   };
 
   function pad(n) { return n < 10 ? '0' + n : String(n); }
@@ -73,7 +34,6 @@
 
   function renderCountdown() {
     if (!cdEl || !noteEl) return;
-    var copy = CD_COPY[htmlEl.lang === 'ru' ? 'ru' : 'en'];
     var now = Date.now();
     var left = START - now;
 
@@ -81,7 +41,7 @@
     if (left <= 0) {
       cdEl.classList.add('is-done');
       cdEl.innerHTML = '';
-      noteEl.textContent = now <= END ? copy.live : copy.over;
+      noteEl.textContent = now <= END ? CD_COPY.live : CD_COPY.over;
       if (cdTimer) { clearInterval(cdTimer); cdTimer = null; }
       return;
     }
@@ -91,7 +51,7 @@
     setCell('h', pad(Math.floor(s / 3600) % 24));
     setCell('m', pad(Math.floor(s / 60) % 60));
     setCell('s', pad(s % 60));
-    noteEl.textContent = copy.running;
+    noteEl.textContent = CD_COPY.running;
   }
 
   if (cdEl) {
@@ -99,9 +59,9 @@
     cdTimer = setInterval(renderCountdown, 1000);
   }
 
-  /* ── 3. SCROLL REVEAL ────────────────────────────────────
-     IntersectionObserver only — never a scroll listener.
-     Stagger comes from a CSS custom property, not from JS
+  /* ── 2. SCROLL REVEAL ────────────────────────────────────
+     IntersectionObserver only, never a scroll listener.
+     Stagger comes from a CSS custom property rather than JS
      timers, so it stays on the compositor.                   */
 
   var revealables = document.querySelectorAll('.reveal');
@@ -145,43 +105,30 @@
     });
   }
 
-  /* ── 4. BOOKING → WHATSAPP ───────────────────────────────
+  /* ── 3. REGISTRATION → WHATSAPP ──────────────────────────
      The page is static, so there is no server to post to.
-     Instead of faking a submit, the form composes a real
-     WhatsApp message. Nothing "succeeds" that did not happen. */
+     Rather than faking a submit, the form composes a real
+     WhatsApp message. Nothing reports success that did not
+     actually happen.                                         */
 
   var WA_NUMBER = '79247381765';
-  var form   = document.getElementById('bookForm');
-  var status = document.getElementById('formStatus');
-  var tierSelect = document.getElementById('fTier');
+  var form    = document.getElementById('bookForm');
+  var status  = document.getElementById('formStatus');
+  var daysSel = document.getElementById('fDays');
 
-  var FORM_COPY = {
-    en: { opening: 'Opening WhatsApp… if nothing happens, use the number below.',
-          waTitle: 'Booking for REGIMEN, 22-26 September',
-          lName: 'Name', lPhone: 'Contact', lTier: 'Ticket', lNote: 'Notes' },
-    ru: { opening: 'Открываем WhatsApp… если ничего не произошло — позвоните по номеру ниже.',
-          waTitle: 'Запись на REGIMEN, 22-26 сентября',
-          lName: 'Имя', lPhone: 'Связь', lTier: 'Билет', lNote: 'Комментарий' }
-  };
-
-  /* Tier buttons jump to the form with the right option chosen. */
-  document.querySelectorAll('[data-tier]').forEach(function (link) {
-    link.addEventListener('click', function () {
-      if (tierSelect) tierSelect.value = link.dataset.tier;
-    });
-  });
+  var OPENING = 'Opening WhatsApp. If nothing happens, use the number below.';
 
   function fieldOf(input) { return input.closest('.field'); }
 
   function showError(input, errId, show) {
-    var err = document.getElementById(errId);
+    var err  = document.getElementById(errId);
     var wrap = fieldOf(input);
     if (wrap) wrap.classList.toggle('is-bad', show);
     if (err) err.hidden = !show;
     input.setAttribute('aria-invalid', String(show));
   }
 
-  function validName(v) { return v.trim().length >= 2; }
+  function validName(v)  { return v.trim().length >= 2; }
   function validPhone(v) { return v.trim().length >= 6; }
 
   if (form) {
@@ -189,7 +136,7 @@
     var phoneI = document.getElementById('fPhone');
     var noteI  = document.getElementById('fNote');
 
-    /* Validate on blur, not on keystroke. */
+    /* Validate on blur, not on every keystroke. */
     nameI.addEventListener('blur', function () {
       showError(nameI, 'errName', !validName(nameI.value));
     });
@@ -199,8 +146,8 @@
     [nameI, phoneI].forEach(function (i) {
       i.addEventListener('input', function () {
         if (fieldOf(i).classList.contains('is-bad')) {
-          showError(i, i === nameI ? 'errName' : 'errPhone',
-                    !(i === nameI ? validName : validPhone)(i.value));
+          var ok = i === nameI ? validName(i.value) : validPhone(i.value);
+          showError(i, i === nameI ? 'errName' : 'errPhone', !ok);
         }
       });
     });
@@ -210,24 +157,21 @@
 
       var okName  = validName(nameI.value);
       var okPhone = validPhone(phoneI.value);
-      showError(nameI, 'errName', !okName);
+      showError(nameI,  'errName',  !okName);
       showError(phoneI, 'errPhone', !okPhone);
 
       if (!okName || !okPhone) {
-        (okName ? phoneI : nameI).focus();   /* focus first invalid field */
+        (okName ? phoneI : nameI).focus();   /* focus the first invalid field */
         return;
       }
 
-      var copy = FORM_COPY[htmlEl.lang === 'ru' ? 'ru' : 'en'];
-      var tierText = tierSelect.options[tierSelect.selectedIndex].textContent.trim();
-
       var lines = [
-        copy.waTitle,
-        copy.lName + ': ' + nameI.value.trim(),
-        copy.lPhone + ': ' + phoneI.value.trim(),
-        copy.lTier + ': ' + tierText
+        'Registration for REGIMEN, 22-26 September',
+        'Name: '    + nameI.value.trim(),
+        'Contact: ' + phoneI.value.trim(),
+        'Days: '    + daysSel.options[daysSel.selectedIndex].textContent.trim()
       ];
-      if (noteI.value.trim()) lines.push(copy.lNote + ': ' + noteI.value.trim());
+      if (noteI.value.trim()) lines.push('Notes: ' + noteI.value.trim());
 
       window.open(
         'https://wa.me/' + WA_NUMBER + '?text=' + encodeURIComponent(lines.join('\n')),
@@ -235,16 +179,8 @@
         'noopener'
       );
 
-      status.textContent = copy.opening;
+      status.textContent = OPENING;
       status.classList.add('is-ok');
     });
   }
-
-  /* ── 5. BOOT ─────────────────────────────────────────────
-     Restore a stored choice; otherwise stay on English, which
-     is the language the markup ships in.                     */
-
-  var stored = null;
-  try { stored = localStorage.getItem(LANG_KEY); } catch (e) { /* private mode */ }
-  if (stored === 'ru') applyLang('ru');
 })();
