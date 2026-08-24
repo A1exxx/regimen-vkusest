@@ -77,6 +77,20 @@ var WA_NUMBER = '79247381765';
 To switch to a real form service later (Formspree, Google Forms, a Telegram bot), replace the
 `form.addEventListener('submit', …)` handler. Keep the validation above it.
 
+### Moving to a custom domain
+
+Three tags in `index.html` hard-code the public origin, because Telegram, WhatsApp
+and Facebook ignore a relative `og:image` and show a blank share preview:
+
+```html
+<link rel="canonical" href="https://…/">
+<meta property="og:url"   content="https://…/">
+<meta property="og:image" content="https://…/assets/og.png">
+```
+
+Update all three, add a `CNAME` file containing the bare domain, point the DNS at
+GitHub Pages, then tick **Enforce HTTPS** in the repository's Pages settings.
+
 ### Social preview
 
 Edit `tools/og-source.html`, then:
