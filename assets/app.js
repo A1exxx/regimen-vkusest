@@ -1,5 +1,5 @@
 /* ============================================================
-   REGIMEN — Vkus Est, Chalong Phuket
+   REGIMEN — Vkus Est, Bangkok
    Vanilla, no dependencies. Three concerns:
    countdown, scroll reveal, WhatsApp registration.
    ============================================================ */
@@ -9,7 +9,7 @@
   var htmlEl = document.documentElement;
 
   /* ── 1. COUNTDOWN ────────────────────────────────────────
-     First session: 22 Sep 2026, 07:30 Phuket (UTC+7).
+     First session: 22 Sep 2026, 07:30 Bangkok (UTC+7).
      The offset is explicit in the literal, so the counter is
      correct from any visitor's timezone.                     */
 
@@ -20,7 +20,7 @@
   var cdTimer = null;
 
   var CD_COPY = {
-    running: 'until the first session, 07:30 Phuket time',
+    running: 'until the first session, 07:30 Bangkok time',
     live:    'the week is running right now',
     over:    'this run has finished. Write to us about the next one'
   };

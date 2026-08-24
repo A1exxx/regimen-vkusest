@@ -1,7 +1,7 @@
 # REGIMEN — event landing page
 
 One-page site for **REGIMEN**, a free five-day healthy-lifestyle and training week hosted at
-**Vkus Est** cafe, Chalong, Phuket, on **22–26 September 2026**. Built to be sent to
+**Vkus Est** cafe in **Bangkok**, on **22–26 September 2026**. Built to be sent to
 international partners so they can read the programme and register in one tap.
 
 English only. Static HTML/CSS/JS, no build step, no dependencies, no framework.
@@ -21,11 +21,14 @@ Deployed on GitHub Pages.
       made up. Swap in the real team.
 - [ ] **The programme content is a proposal, not a booking.** Times, session structure and the
       twenty-four-place cap have not been confirmed with anyone.
-- [ ] **Check the street address.** Only the district (Chalong) is confirmed from public
-      sources; the Google Maps link does point at the real venue.
+- [ ] **The Bangkok street address is not set.** The page says "Sukhumvit, Watthana, Bangkok
+      10110" and tells the reader the exact address arrives on confirmation. Fill in the real one.
+- [ ] **Worth knowing:** the Vkus Est listed publicly is a *Phuket* business (Chalong and
+      Ko Kaeo). No Bangkok branch appears in any public source. The site says Bangkok because
+      that is where you said the event runs, but double-check the venue name is right.
 
-Everything else on the page (opening hours, phone numbers, Instagram handle, the two venues) is
-taken from the cafe's own public listings.
+The phone numbers and the Instagram handle are the cafe's real published ones. The morning
+sessions point at Lumphini Park, which is real and links to a working Google Maps search.
 
 ---
 
@@ -37,7 +40,7 @@ assets/styles.css       design tokens and all styling
 assets/app.js           countdown, scroll reveal, WhatsApp registration
 assets/favicon.svg      tab icon
 assets/og.png           1200×630 social preview
-assets/img/*.webp       the four photographs
+assets/img/*.webp       four photographs, each at two widths for srcset
 assets/img/CREDITS.csv  photographer and licence for each one
 tools/og-source.html    the HTML the OG image is rendered from
 tools/build-og.ps1      re-renders assets/og.png via headless Chrome
@@ -90,6 +93,9 @@ To move to a real form service later (Formspree, Google Forms, a Telegram bot), 
 Four images, all from Pexels under the Pexels License, which permits commercial use without
 attribution. Photographer credits are recorded in `assets/img/CREDITS.csv` anyway.
 
+Each one ships at two widths (`name@1x.webp` and `name.webp`) behind a `srcset`, so a phone
+pulls roughly 330 KB instead of 1.3 MB.
+
 They are **not** colour-treated on disk. The red duotone is applied in CSS:
 
 ```css
@@ -99,7 +105,13 @@ They are **not** colour-treated on disk. The red duotone is applied in CSS:
 
 `luminosity` keeps the photograph's tonal structure and takes its hue from the red underneath.
 That means any replacement photo drops straight in and matches the rest of the page with no
-editing. To swap one, overwrite the `.webp` at the same path and keep the aspect ratio at 3:2.
+editing. To swap one, overwrite both widths at the same paths and keep the aspect ratio.
+
+The food photograph behind the "On the plate" section is handled differently. It carries a
+`brightness(.46)` ceiling rather than only a dark overlay, because an overlay alone could not
+hold contrast: a white bowl rim measured near-white straight through a 74% wash and would have
+erased any light text crossing it. Capping luminance on the image itself makes the guarantee
+hold for whatever photo is dropped in later.
 
 ### Social preview
 
@@ -133,8 +145,11 @@ that historically looked exactly like this.
 
 - Paper `#F7F4EF`, ink `#16110F`, one red `#D8262A`. No second accent colour anywhere.
 - Barlow Condensed for display, Barlow for body text.
-- Contrast: red on paper 4.52:1, off-white on red 4.89:1, ink on paper 17.07:1. All clear
-  WCAG AA for body text.
+- Contrast, measured against rendered pixels rather than assumed: red on paper 4.52:1,
+  off-white on red 4.89:1, ink on paper 17.07:1. On the dark food section, headings hit 9.36:1
+  and body text 6.31:1 against the brightest pixel the background can reach.
+- `--red-on-dark` (`#FF8A78`) exists because the brand red measures 1.9:1 on that section. It is
+  a lifted tonal variant used there and nowhere else.
 - Motion is `transform` and `opacity` only, driven by `IntersectionObserver`. There are no
   scroll listeners. `prefers-reduced-motion` disables all of it.
 - The grain layer is `position: fixed` and `pointer-events: none`, so it never repaints during
@@ -146,3 +161,8 @@ that historically looked exactly like this.
 Verified at 375px and 1440px: no horizontal scroll, no element wider than the viewport, every
 standalone control at least 44px tall, form errors hidden until the field is left, and a clean
 console.
+
+One cascade trap worth knowing if you edit the CSS: the section numbers (`.tenet__n`,
+`.rule__n`) are `<p>` elements, so a bare `.tenet p { }` rule outranks `.tenet__n { }` on
+specificity and silently repaints them body-colour. Both are scoped with `:not()` for that
+reason. The same trap already bit `[hidden]` and the footer logo.
