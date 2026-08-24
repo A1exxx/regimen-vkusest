@@ -37,14 +37,15 @@ ssh -i "$KEY" -o BatchMode=yes -o StrictHostKeyChecking=no "$HOST" '
 ' < /tmp/regimen-site.tgz
 
 echo "Verifying..."
-code=$(curl -s -o /dev/null -w '%{http_code}' --max-time 15 -H "Host: regimen.cc" "http://$IP/")
-title=$(curl -s --max-time 15 -H "Host: regimen.cc" "http://$IP/" | grep -o '<title>[^<]*</title>' || true)
+SITE="${REGIMEN_URL:-https://www.regimen.cc/}"
+code=$(curl -s -o /dev/null -w '%{http_code}' --max-time 20 "$SITE")
+title=$(curl -s --max-time 20 "$SITE" | grep -o '<title>[^<]*</title>' || true)
 
 if [ "$code" = "200" ]; then
   echo "  HTTP 200"
   echo "  $title"
   echo "Done."
 else
-  echo "  HTTP $code -- something is wrong, check: ssh $HOST 'tail /var/log/nginx/error.log'" >&2
+  echo "  HTTP $code at $SITE -- check: ssh $HOST 'tail /var/log/nginx/error.log'" >&2
   exit 1
 fi

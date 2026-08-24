@@ -7,7 +7,8 @@ international partners so they can read the programme and register in one tap.
 English only. Static HTML/CSS/JS, no build step, no dependencies, no framework.
 Deployed on GitHub Pages.
 
-**Live:** https://a1exxx.github.io/regimen-vkusest/
+**Live:** https://www.regimen.cc/  (apex `regimen.cc` redirects there)
+**Mirror:** https://a1exxx.github.io/regimen-vkusest/
 
 ---
 
@@ -171,22 +172,39 @@ certbot --nginx -d regimen.cc -d www.regimen.cc -d panel.regimen.cc -d wa.regime
 
 Renewal is automatic from then on.
 
-### DNS records to create at the registrar
+### DNS, as it now stands at Porkbun
 
-| Type | Name | Value |
+| Type | Host | Value |
 |---|---|---|
-| A | `@` | `84.247.148.135` |
-| A | `www` | `84.247.148.135` |
-| A | `panel` | `84.247.148.135` |
-| A | `wa` | `84.247.148.135` |
-| AAAA | `@` | `2407:3640:2330:1489::1` |
+| A | `regimen.cc` | `84.247.148.135` |
+| A | `www.regimen.cc` | `84.247.148.135` |
+| A | `panel.regimen.cc` | `84.247.148.135` |
+| A | `wa.regimen.cc` | `84.247.148.135` |
+| CNAME | `*.regimen.cc` | `pixie.porkbun.com` (Porkbun default, harmless: explicit records win) |
 
-To point the apex at GitHub Pages instead of the VPS, use these four A records rather than the
-server's, and run `tools/switch-domain.ps1` (it refuses to run until it can see them):
+**The trap that cost hours here.** A freshly registered Porkbun domain ships with
+`ALIAS regimen.cc -> pixie.porkbun.com`. An ALIAS and an A record cannot coexist on the same
+name, so every apex A record added on top of it was silently discarded: the panel reported
+"A record created", the row appeared in the table, and the nameservers kept serving the parking
+address. The fix was to *edit* the ALIAS row and change its type to A, not to add another record.
 
+Two more things about that panel, worth knowing before touching it again:
+
+- The classic editor at `/account/dns/<domain>` is a **staging** form. "Add Record" only queues
+  a row locally; nothing is written until **Submit Records** at the bottom. Its record table
+  also frequently renders empty even when the zone is populated, so it is not a source of truth.
+- The newer editor, reached from the DNS tag in Domain Management, does list the real records
+  and has per-row edit and delete. Use that one.
+
+Verify from outside rather than trusting either UI:
+
+```bash
+dig @curitiba.ns.porkbun.com regimen.cc A +short
 ```
-185.199.108.153   185.199.109.153   185.199.110.153   185.199.111.153
-```
+
+To move the site to GitHub Pages instead, point the four names at
+`185.199.108.153 / .109.153 / .110.153 / .111.153` and run `tools/switch-domain.ps1`
+(it refuses to run until it can actually see those records).
 
 ---
 
