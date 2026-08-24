@@ -14,16 +14,18 @@ Deployed on GitHub Pages.
 
 ## Read this before the page goes to real guests
 
-- [ ] **The organiser block in the footer is invented.** Company name, registration number, tax
-      ID and street address are plausible-looking stand-ins, deliberately, so the page looks
-      finished. They are **not** the real company record. Replace them before this page is
-      attached to anything contractual, printed, or filed.
+- [ ] **There is no legal-entity block on the page, on purpose.** An earlier draft carried an
+      invented company name, registration number and tax ID as visual filler; those were removed
+      rather than shipped, because a fabricated registration number is the kind of thing that
+      causes real trouble if anyone acts on it. If the event needs an organiser block, add the
+      genuine record.
 - [ ] **The four coaches are fictional.** Names, biographies and years of experience are all
       made up. Swap in the real team.
 - [ ] **The programme content is a proposal, not a booking.** Times, session structure and the
       twenty-four-place cap have not been confirmed with anyone.
-- [ ] **The Bangkok street address is not set.** The page says "Sukhumvit, Watthana, Bangkok
-      10110" and tells the reader the exact address arrives on confirmation. Fill in the real one.
+- [ ] **The venue address says only "Bangkok, Thailand".** That is deliberate: the district and
+      postcode in an earlier draft were guesses. The page tells the reader the exact address and
+      meeting point arrive on confirmation. Put the real street address in when you have it.
 - [ ] **Worth knowing:** the Vkus Est listed publicly is a *Phuket* business (Chalong and
       Ko Kaeo). No Bangkok branch appears in any public source. The site says Bangkok because
       that is where you said the event runs, but double-check the venue name is right.
